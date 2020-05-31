@@ -42,9 +42,10 @@ For help execute `atitool` without parameters.
 - `./atitool cail` Displays options for CAIL (Common ASIC Init Library) operations
 - `./atitool fw` Displays options for firmware related operations for SMC and micro engines
 - `./atitool btc` Displays options for Boot Time Caibration and Power Supply Monitor logging
-- `./atitool pm` Displays option for Power Management parameters logging
+- `./atitool pace` Displays options for getting/setting PACE table
+- `./atitool pm` Displays options for Power Management parameters logging
 - `./atitool gpustatus` Displays options for GPU status
-- `./atitool rascount` Displays options for RAS count
+- `./atitool raserrortest` Displays options for RAS error injection/detection and error counters
 
 ## Commands
 
@@ -92,6 +93,8 @@ Output:
 - `-decmclk=<#>` Decrease mem clock to current clk - delta `#` (MHz)
 - `-decsclk=<#>` Decrease eng clock to current clk - delta `#` (MHz)
 - `-biosclkctrl` Use AtomBIOS to change engine clock
+- `-clkinst=<#>` Specify clock instance for multi instance clocks
+- `-allinst` Set clock on all instances for multi instance clocks
 - `-adjpll` Adjust PLL to change clock
 - `-favordclk` Favor DCLK over VCLK
 - `-favorvclk` Favor VCLK over DCLK
@@ -128,6 +131,8 @@ Output:
 - `-shubclk=<#>` Set SHUBCLK to a new value `#` (MHz)
 - `-fclk=<#>` Set FCLK to a new value `#` (MHz)
 - `-dispclk=<#>` Set DISPLCLK to a new value `#` (Mhz)
+- `-dppclk=<#>` Set DPPLCLK to a new value `#` (Mhz)
+- `-usbdfsclk=<#>` Set USBDFSLCLK to a new value `#` (Mhz)
 - `-sclkdiv=<#>` Set SCLK DFS divider
 - `-lclkdiv=<#>` Set LCLK DFS divider
 - `-vclkdiv=<#>` Set VCLK DFS divider
@@ -150,3 +155,4 @@ Output:
 - `-bypassffcdisable`  not disable FFC on MCLK changes.
 - `-enableacg` Use ACG for clock change (if supported)
 - `-useafll` Use AFLL for clock change (if supported)
+- `-gcea` Apply GCEA settings after changing GFXCLK/MCLK (if supported)
